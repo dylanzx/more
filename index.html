@@ -6,9 +6,9 @@
     <style>
         body{
             background: green;
+            margin-top: 100px;
         }
         p{
-            padding-top: 100px;
             color: white;
             font-size: 50px;
             font-family: "Adobe Gothic Std B";
@@ -16,12 +16,13 @@
     </style>
 </head>
 <body style="text-align: center">
+<p>just there & more and more 相爱了:</p>
 <p></p>
 <script>
     let date1 = new Date("2015/10/06 15:00");
     let date = null;
     let totalSeconds = 0;
-    let op = document.getElementsByTagName('p')[0];
+    let op = document.getElementsByTagName('p')[1];
     setInterval(function () {
         date = new Date();
         totalSeconds = (date.getTime() - date1.getTime()) / 1000;
@@ -37,7 +38,7 @@
 
         let seconds = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60 - mins * 60;//取得算出分后剩余的秒数
 
-        let string = "just there & more and more 相爱了: " + days + "天 " + hours + "小时" + mins + "分" + parseInt(seconds) + "秒。";
+        let string = "" + days + "天 " + hours + "小时" + mins + "分" + parseInt(seconds) + "秒。";
         op.innerHTML = string;
     }, 1000)
 </script>
