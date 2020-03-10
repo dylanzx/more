@@ -1,31 +1,44 @@
-<!doctype html>
-<html>
-<body>
-Hello!
-  <p></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Story</title>
+    <style>
+        body{
+            background: green;
+        }
+        p{
+            padding-top: 100px;
+            color: white;
+            font-size: 50px;
+            font-family: "Adobe Gothic Std B";
+        }
+    </style>
+</head>
+<body style="text-align: center">
+<p></p>
 <script>
-    var date1 = new Date("2015/10/06 15:00")
-    var date = null;
-    var miao = 0;
-    var op = document.getElementsByTagName('p')[0];
+    let date1 = new Date("2015/10/06 15:00");
+    let date = null;
+    let totalSeconds = 0;
+    let op = document.getElementsByTagName('p')[0];
     setInterval(function () {
         date = new Date();
-        miao = (date.getTime() - date1.getTime()) / 1000;
-        var day = parseInt(miao / (24 * 60 * 60));//计算整数天数
+        totalSeconds = (date.getTime() - date1.getTime()) / 1000;
+        let days = parseInt(totalSeconds / (24 * 60 * 60));//计算整数天数
 
-        var afterDay = miao - day * 24 * 60 * 60;//取得算出天数后剩余的秒数
+        let afterDay = totalSeconds - days * 24 * 60 * 60;//取得算出天数后剩余的秒数
 
-        var hour = parseInt(afterDay / (60 * 60));//计算整数小时数
+        let hours = parseInt(afterDay / (60 * 60));//计算整数小时数
 
-        var afterHour = miao - day * 24 * 60 * 60 - hour * 60 * 60;//取得算出小时数后剩余的秒数
+        let afterHour = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60;//取得算出小时数后剩余的秒数
 
-        var min = parseInt(afterHour / 60);//计算整数分
+        let mins = parseInt(afterHour / 60);//计算整数分
 
-        var afterMin = miao - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60;//取得算出分后剩余的秒数
+        let seconds = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60 - mins * 60;//取得算出分后剩余的秒数
 
-        var string = "just there & more and more 相爱了: " + day + "天 " + hour + "小时" + min + "分" + parseInt(afterMin) + "秒";
+        let string = "just there & more and more 相爱了: " + days + "天 " + hours + "小时" + mins + "分" + parseInt(seconds) + "秒。";
         op.innerHTML = string;
-        console.log(day, hour, min, parseInt(afterMin));
     }, 1000)
 </script>
 </body>
