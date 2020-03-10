@@ -4,16 +4,29 @@
 Hello!
   <p></p>
 <script>
+    var date1 = new Date("2015/10/06 15:00")
     var date = null;
+    var miao = 0;
     var op = document.getElementsByTagName('p')[0];
     setInterval(function () {
         date = new Date();
-        var d = date.getDate();
-        var hour = date.getHours()
-        var time = date.getTime();
-        op.innerHTML = date.toLocaleString();
-        console.log(date.toLocaleString())
-    },1000)
+        miao = (date.getTime() - date1.getTime()) / 1000;
+        var day = parseInt(miao / (24 * 60 * 60));//计算整数天数
+
+        var afterDay = miao - day * 24 * 60 * 60;//取得算出天数后剩余的秒数
+
+        var hour = parseInt(afterDay / (60 * 60));//计算整数小时数
+
+        var afterHour = miao - day * 24 * 60 * 60 - hour * 60 * 60;//取得算出小时数后剩余的秒数
+
+        var min = parseInt(afterHour / 60);//计算整数分
+
+        var afterMin = miao - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60;//取得算出分后剩余的秒数
+
+        var string = "just there & more and more 相爱了: " + day + "天 " + hour + "小时" + min + "分" + parseInt(afterMin) + "秒";
+        op.innerHTML = string;
+        console.log(day, hour, min, parseInt(afterMin));
+    }, 1000)
 </script>
 </body>
 </html>
