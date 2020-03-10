@@ -2,5 +2,16 @@
 <html>
 <body>
 Hello!
+  <p></p>
+<script>
+    var date = new Date();
+    var d = date.getDate();
+    var hour = date.getHours()
+    var time = date.getTime();
+    var op = document.getElementsByTagName('p')[0];
+    setInterval(function () {
+        op.innerHTML = time;
+    },1000)
+</script>
 </body>
 </html>
