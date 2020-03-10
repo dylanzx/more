@@ -4,13 +4,15 @@
 Hello!
   <p></p>
 <script>
-    var date = new Date();
-    var d = date.getDate();
-    var hour = date.getHours()
-    var time = date.getTime();
+    var date = null;
     var op = document.getElementsByTagName('p')[0];
     setInterval(function () {
-        op.innerHTML = time;
+        date = new Date();
+        var d = date.getDate();
+        var hour = date.getHours()
+        var time = date.getTime();
+        op.innerHTML = date.toLocaleString();
+        console.log(date.toLocaleString())
     },1000)
 </script>
 </body>
