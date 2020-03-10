@@ -15,10 +15,10 @@
             font-size: 50px;
             font-family: "Adobe Gothic Std B";
         }
-        video{
+
+        video {
             height: 500px;
-            margin: 20px
-        ;
+            margin: 20px;
         }
     </style>
 </head>
@@ -36,24 +36,23 @@
     let totalSeconds = 0;
     let arr;
     let op = document.getElementsByTagName('p')[1];
+    getLength();
     setInterval(function () {
+        getLength();
+    }, 1000);
+
+    function getLength() {
         date = new Date();
         totalSeconds = (date.getTime() - date1.getTime()) / 1000;
         let days = parseInt(totalSeconds / (24 * 60 * 60));//计算整数天数
-
         let afterDay = totalSeconds - days * 24 * 60 * 60;//取得算出天数后剩余的秒数
-
         let hours = parseInt(afterDay / (60 * 60));//计算整数小时数
-
         let afterHour = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60;//取得算出小时数后剩余的秒数
-
         let mins = parseInt(afterHour / 60);//计算整数分
-
         let seconds = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60 - mins * 60;//取得算出分后剩余的秒数
+        op.innerHTML = days + "天 " + hours + "小时" + mins + "分" + parseInt(seconds) + "秒。";
 
-        let string = "" + days + "天 " + hours + "小时" + mins + "分" + parseInt(seconds) + "秒。";
-        op.innerHTML = string;
-    }, 1000)
+    }
 </script>
 </body>
 </html>
