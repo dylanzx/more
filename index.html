@@ -16,7 +16,7 @@
         p {
             color: white;
             font-size: 50px;
-            font-family: "Adobe 黑体 Std R";
+            font-family: "Adobe 黑体 Std R", serif;
         }
 
         video {
@@ -35,9 +35,8 @@
 
 <script>
     let date1 = new Date("2016/10/06 15:00");
-    let date = null;
-    let totalSeconds = 0;
-    let arr;
+    let date = new Date();
+    totalSeconds = (date.getTime() - date1.getTime()) / 1000;
     let op = document.getElementsByTagName('p')[1];
     getLength();
     setInterval(function () {
@@ -45,8 +44,7 @@
     }, 1000);
 
     function getLength() {
-        date = new Date();
-        totalSeconds = (date.getTime() - date1.getTime()) / 1000;
+        totalSeconds += 1;
         let days = parseInt(totalSeconds / (24 * 60 * 60));//计算整数天数
         let afterDay = totalSeconds - days * 24 * 60 * 60;//取得算出天数后剩余的秒数
         let hours = parseInt(afterDay / (60 * 60));//计算整数小时数
@@ -67,7 +65,7 @@
             let p = document.createElement('p');
             p.innerHTML = "武汉加油！中国加油！";
             p.style.color = 'red';
-            document.body.insertBefore(p,aps[0]);
+            document.body.insertBefore(p, aps[0]);
 
         }
     }
