@@ -5,17 +5,18 @@
     <title>Love Story</title>
     <link rel="shortcut icon" href="./1.jpg" type="image/x-icon">
 
-    <meta http-equiv="Cache-Control" content="max-age=7200" />
+    <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <style>
         body {
             background: green;
             margin-top: 100px;
+            text-align: center;
         }
 
         p {
             color: white;
             font-size: 50px;
-            font-family: "Adobe Gothic Std B";
+            font-family: "Adobe 黑体 Std R";
         }
 
         video {
@@ -24,11 +25,11 @@
         }
     </style>
 </head>
-<body style="text-align: center">
-<p>just there & more and more 相爱了:</p>
+<body>
+<p>just there 和 MORE&MORE 相爱了:</p>
 <p></p>
 <div class="videoWrap">
-    <video src="./1.mp4" controls="controls" preload="auto"></video>
+    <video src="./1.mp4" controls="controls" muted autoplay></video>
     <video src="./2.mp4" controls="controls" preload="auto"></video>
 </div>
 
@@ -52,8 +53,23 @@
         let afterHour = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60;//取得算出小时数后剩余的秒数
         let mins = parseInt(afterHour / 60);//计算整数分
         let seconds = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60 - mins * 60;//取得算出分后剩余的秒数
-        op.innerHTML = days + "天 " + hours + "小时" + mins + "分" + parseInt(seconds) + "秒。";
+        op.innerHTML = days + "天 " + hours + "时" + mins + "分" + parseInt(seconds) + "秒。";
 
+    }
+
+    document.onclick = fighting;
+
+    function fighting() {
+        var aps = document.getElementsByTagName('p');
+        if (aps.length === 3) {
+            document.body.removeChild(aps[0])
+        } else {
+            let p = document.createElement('p');
+            p.innerHTML = "武汉加油！中国加油！";
+            p.style.color = 'red';
+            document.body.prepend(p);
+
+        }
     }
 </script>
 </body>
