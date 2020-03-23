@@ -35,13 +35,13 @@
 
 <script>
     let date1 = new Date("2016/10/06 15:00");
-    let date = new Date();
+    let date = new Date("2020/03/23 23:31");
     totalSeconds = (date.getTime() - date1.getTime()) / 1000;
     let op = document.getElementsByTagName('p')[1];
     getLength();
-    setInterval(function () {
+/*    setInterval(function () {
         getLength();
-    }, 1000);
+    }, 1000);*/
 
     function getLength() {
         totalSeconds += 1;
@@ -51,7 +51,7 @@
         let afterHour = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60;//取得算出小时数后剩余的秒数
         let mins = parseInt(afterHour / 60);//计算整数分
         let seconds = totalSeconds - days * 24 * 60 * 60 - hours * 60 * 60 - mins * 60;//取得算出分后剩余的秒数
-        op.innerHTML = days + "天 " + hours + "时" + mins + "分" + parseInt(seconds) + "秒。";
+        op.innerHTML = days + "天 " + hours + "时" + mins + "分";
 
     }
 
