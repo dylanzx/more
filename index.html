@@ -39,9 +39,10 @@
     totalSeconds = (date.getTime() - date1.getTime()) / 1000;
     let op = document.getElementsByTagName('p')[1];
     getLength();
-/*    setInterval(function () {
-        getLength();
-    }, 1000);*/
+
+    /*    setInterval(function () {
+            getLength();
+        }, 1000);*/
 
     function getLength() {
         totalSeconds += 1;
@@ -55,7 +56,11 @@
 
     }
 
-    document.onclick = fighting;
+    document.onclick = function (ev) {
+        var videosArr = [].slice.call(document.getElementsByTagName("video"));
+        if (videosArr.indexOf(ev.target) === -1)
+            fighting()
+    };
 
     function fighting() {
         var aps = document.getElementsByTagName('p');
@@ -66,7 +71,6 @@
             p.innerHTML = "武汉加油！中国加油！";
             p.style.color = 'red';
             document.body.insertBefore(p, aps[0]);
-
         }
     }
 </script>
