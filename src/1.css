@@ -1,13 +1,18 @@
+body, div, p, video, img, span {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background: green;
-    margin-top: 100px;
+    /*margin-top: 50px;*/
     text-align: center;
 }
 
 body > p {
     color: white;
     font-size: 50px;
+    margin-top: 20px;
     font-family: "Adobe 黑体 Std R", serif;
 }
 
@@ -35,4 +40,12 @@ div.diary {
     height: auto;
     float: right;
     display: block;
+}
+.swiper-container {
+    width: 900px;
+    height: 600px;
+}
+.swiper-container img{
+    width: 900px;
+    height: 600px;
 }
