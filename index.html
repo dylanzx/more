@@ -107,6 +107,7 @@
     var mySwiper = new Swiper ('.swiper-container', {
         // Optional parameters
         // direction: 'vertical',
+        effect:"cube",
         autoplay: {
             delay: 5000,
         },
@@ -128,6 +129,9 @@
             el: '.swiper-scrollbar',
         },
     })
+    document.body.innerHTML = "网站迁移中..."
+    document.body.style.background = "#fff"
+    document.body.style.paddingTop = "100px"
 </script>
 </body>
 </html>
